@@ -5,8 +5,8 @@ Nessa atividade, vamos dar os primeiros passos com JavaScript, praticando com a 
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
+- Nome: Gabriel Mota Valério
+- Matricula: 918995
 
 ## Print do console do navegador
 
