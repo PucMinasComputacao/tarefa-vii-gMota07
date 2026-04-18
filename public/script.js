@@ -6,40 +6,48 @@ while(isNaN(renda)){
 }
 let despesas = parseInt(prompt("Quantidade de despesas(1 a 5): "))
 while(isNaN(despesas)){
+    alert("Digite um numero.")
     despesas = parseInt(prompt("Quantidade de despesas(1 a 5): "))
 }
 if(despesas>5){
     despesas = 5
-}else{
+}else if(despesas < 1){
     despesas = 1
 }
 
 let valorDespesa = 0
 let soma = 0
 for(i=0; i < despesas; i++){
-    valorDespesa = parseFloat(prompt("Digite o valor da despesa[${despesas}]: "))
+    valorDespesa = parseFloat(prompt("Digite o valor da despesa[ " + i + "}]: "))
+    while(isNaN(valorDespesa)){
+        alert("Digite um numero.")
+        valorDespesa = parseFloat(prompt("Digite o valor da despesa[ " + i + "}]: "))
+    }
     soma += valorDespesa
 }
-
+let sobra = renda - soma
+let aprovacao = ''
 if(despesas > renda){
     alert("⚠️ Atenção: você gastou mais do que ganhou.")
-}else{
-    let sobra = despesas - renda
+}else{    
     let percentual = renda * 0.3
-    let aprovacao = ''
+    console.log(percentual)
     if(sobra >= percentual){
         aprovacao = "✅ Ótimo: boa margem de sobra."
     }else{
-         aprovacao = "🙂 Ok: dá para melhorar a sobra."
+        aprovacao = "🙂 Ok: dá para melhorar a sobra."
     }
 }
 
-alert(```
-    Nome: ${nome}
-    Renda: ${renda}
-    Total despesas: ${soma}
-    Sobra: ${sobra}
-    Classificação ${aprovacao}
-
-
-    ```)
+alert(
+    "Nome: " + nome +
+  "\nRenda: " + renda +
+    "\nTotal despesas: " + soma+ 
+    "\nSobra: " + sobra+
+   "\nClassificação: " + aprovacao
+)
+console.log("Nome: " + nome +
+  "\nRenda: " + renda +
+    "\nTotal despesas: " + soma+ 
+    "\nSobra: " + sobra+
+   "\nClassificação: " + aprovacao)
